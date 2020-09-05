@@ -7,3 +7,8 @@ export function col(content) {
 export function img(path, styles, alt) {
     return `<img src="${path}" class="img-fluid" alt="${alt}" style="${styles}">`
 }
+
+export function css(styles = {}) {
+    const toString = key => `${key}: ${styles[key]}`
+    Object.keys(styles).map(toString).join(';')
+}
